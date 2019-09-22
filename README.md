@@ -7,7 +7,7 @@ This project demonstrates MVVM with Clean Architecture in Kotlin. It updates rat
 
 ### Tech-stack
 
-<img src="extras/images/demo.gif" width="336" align="right" hspace="20">
+<img src="extras/demo.gif" width="336" align="right" hspace="20">
 
 * Programming language
     * [Kotlin](https://kotlinlang.org/) 

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Live Rates</string>
+    <string name="australian">Australian Dollar</string>
+    <string name="brazilian">Brazilian Real</string>
+    <string name="bulgaria">Bulgarian Lev</string>
+    <string name="canadian">Canadian Dollar</string>
+    <string name="swiss">Swiss Franc</string>
+    <string name="chinese">Chinese Yuan</string>
+    <string name="czech">Czech Krone</string>
+    <string name="denmark">Danish Krone</string>
+    <string name="united_kingdom">Pound sterling</string>
+    <string name="hong_kong">Hong Kong Dollar</string>
+    <string name="croatia">Croatian Kuna</string>
+    <string name="hungary">Hungarian Forint</string>
+    <string name="indonesia">Indonesian Rupiah</string>
+    <string name="israel">Israeli New Shekel</string>
+    <string name="india">Indian Rupee</string>
+    <string name="iceland">Icelandic Króna</string>
+    <string name="japan">Japanese Yen</string>
+    <string name="south_korea">South Korean won</string>
+    <string name="mexico">Mexican Peso</string>
+    <string name="malaysia">Malaysian Ringgit</string>
+    <string name="new_zealand">New Zealand Dollar</string>
+    <string name="norway">Norwegian Krone</string>
+    <string name="philippines">Philippine peso</string>
+    <string name="poland">Poland złoty</string>
+    <string name="romania">Romanian Leu</string>
+    <string name="russia">Russian Ruble</string>
+    <string name="sweden">Swedish Krona</string>
+    <string name="singapore">Singapore Dollar</string>
+    <string name="thailand">Thai Baht</string>
+    <string name="turkey">Turkish lira</string>
+    <string name="usa">United States Dollar</string>
+    <string name="south_africa">South African Rand</string>
+    <string name="euro">Euro</string>
+    <string name="unknown_currency">Unknown Currency</string>
+
+    <string name="default_amount_hint">0</string>
+    <string name="error_text">Oops, something went wrong!</string>
+    <string name="retry">Retry</string>
+</resources>

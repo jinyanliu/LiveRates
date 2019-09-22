@@ -1,0 +1,135 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.lung.demo"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "com.lung.demo.TestRunner"
+    }
+
+    flavorDimensions "env"
+
+    productFlavors {
+        dev {
+            dimension = "env"
+            buildConfigField "String", "BASE_URL", "\"https://revolut.duckdns.org/\""
+        }
+        production {
+            dimension = "env"
+            buildConfigField "String", "BASE_URL", "\"https://revolut.duckdns.org/\""
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    androidExtensions {
+        experimental = true
+        features = ["parcelize"]
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+
+    dependencies {
+
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+
+        implementation "androidx.appcompat:appcompat:$appcompat"
+        implementation "androidx.core:core-ktx:$core_ktx"
+        implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+        implementation "androidx.recyclerview:recyclerview:$recycler_view"
+
+        implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+        implementation "com.google.android.material:material:$material_version"
+
+
+        implementation "com.google.dagger:dagger:$dagger"
+        implementation "com.google.dagger:dagger-android-support:$dagger"
+        kapt "com.google.dagger:dagger-compiler:$dagger"
+        kapt "com.google.dagger:dagger-android-processor:$dagger"
+
+        implementation "io.reactivex.rxjava2:rxjava:$rx_java"
+        implementation "io.reactivex.rxjava2:rxandroid:$rx_android"
+        implementation "io.reactivex.rxjava2:rxkotlin:$rx_kotlin"
+
+
+        implementation "com.github.bumptech.glide:glide:$glide"
+        kapt "com.github.bumptech.glide:compiler:$glide"
+
+
+        implementation "com.squareup.retrofit2:retrofit:$retrofit"
+        implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+        implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit"
+
+        implementation "com.squareup.okhttp3:okhttp:$okhttp"
+        implementation "com.squareup.moshi:moshi:$moshi"
+        implementation "com.squareup.moshi:moshi-kotlin:$moshi"
+
+
+        implementation "com.facebook.stetho:stetho-okhttp3:$stetho"
+        implementation "com.jakewharton.timber:timber:$timber"
+
+        implementation "androidx.test.espresso:espresso-core:$espresso"
+
+        testImplementation "junit:junit:$jUnit"
+        testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin"
+        testImplementation "org.mockito:mockito-android:$mockitoAndroid"
+
+        testImplementation "org.assertj:assertj-core:$assertJ"
+        testImplementation "androidx.arch.core:core-testing:$archCore"
+
+        testImplementation "org.robolectric:robolectric:$robolectric"
+
+        androidTestImplementation "com.google.dagger:dagger:$dagger"
+        androidTestImplementation "com.google.dagger:dagger-android-support:$dagger"
+        kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger"
+        kaptAndroidTest "com.google.dagger:dagger-android-processor:$dagger"
+
+        androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+        androidTestImplementation "androidx.test.espresso:espresso-contrib:$espresso"
+        androidTestImplementation "androidx.test:runner:$androidXTest"
+
+        androidTestImplementation "androidx.test:core:$androidXTest"
+        androidTestImplementation "androidx.test.ext:junit-ktx:$junitKtx"
+        androidTestImplementation "androidx.test:rules:$androidXTest"
+        androidTestImplementation "androidx.test:core:$androidXTest"
+
+        androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin"
+        androidTestImplementation "org.mockito:mockito-android:$mockitoAndroid"
+
+
+    }
+}

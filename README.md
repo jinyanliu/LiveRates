@@ -1,7 +1,7 @@
 # LiveRates
 
 
-### Project Overview
+### Overview
 
 This project demonstrates MVVM with Clean Architecture in Kotlin. It updates rates every second.When changing the amount , it simultaneously updates the corresponding value for other currencies.
 
@@ -9,12 +9,14 @@ This project demonstrates MVVM with Clean Architecture in Kotlin. It updates rat
 
 <img src="extras/images/demo.gif" width="336" align="right" hspace="20">
 
-* Tech-stack
+* Programming language
     * [Kotlin](https://kotlinlang.org/) 
+* Libraries   
     * [RxJava](https://github.com/ReactiveX/RxJava) and [RxAndroid](https://github.com/ReactiveX/RxAndroid)
     * [Dagger 2](http://google.github.io/dagger/) - dependency injection
     * [Retrofit](https://square.github.io/retrofit/) - networking
     * [Jetpack](https://developer.android.com/jetpack)
+        * [Data Binding](https://developer.android.com/topic/libraries/data-binding/) - bind UI components in layouts to data sources 
         * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - notify views about data change
         * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - perform action when lifecycle state changes
         * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - store and manage UI-related data in a lifecycle conscious way

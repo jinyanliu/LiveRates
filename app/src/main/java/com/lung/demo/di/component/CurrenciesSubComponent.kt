@@ -20,6 +20,4 @@ interface CurrenciesSubComponent : AndroidInjector<CurrenciesActivity> {
     @Subcomponent.Factory
     interface Factory : AndroidInjector.Factory<CurrenciesActivity>
 
-    fun inject(injectable: CurrencyViewHolder)
-
 }

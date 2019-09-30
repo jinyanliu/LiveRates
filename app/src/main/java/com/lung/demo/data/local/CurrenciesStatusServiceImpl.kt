@@ -24,7 +24,8 @@ class CurrenciesStatusServiceImpl @Inject constructor() :
     private val currenciesSubject: PublishSubject<List<Currency>> =
         PublishSubject.create()
 
-    private val isBaseChangedSubject: BehaviorSubject<Boolean> = BehaviorSubject.createDefault(false)
+    private val isBaseChangedSubject: BehaviorSubject<Boolean> =
+        BehaviorSubject.createDefault(false)
 
     override val base: String get() = baseSubject.value!!
 
@@ -45,7 +46,7 @@ class CurrenciesStatusServiceImpl @Inject constructor() :
     }
 
     override val observePerSecond: Flowable<Long> by lazy {
-        Flowable.interval(1, 1, TimeUnit.SECONDS)
+        Flowable.interval(1, DEFAULT_INTERVAL, TimeUnit.SECONDS)
             .startWith(0)
     }
 
@@ -77,6 +78,7 @@ class CurrenciesStatusServiceImpl @Inject constructor() :
 
     companion object {
         private const val DEFAULT_BASE = "EUR"
+        private const val DEFAULT_INTERVAL = 2L
         private val DEFAULT_AMOUNT = BigDecimal(100)
     }
 

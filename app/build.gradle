@@ -16,6 +16,15 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "com.lung.demo.TestRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.schemaLocation":"$projectDir/schemas".toString(),
+                        "room.incremental":"true",
+                        "room.expandProjection":"true"]
+            }
+        }
     }
 
     flavorDimensions "env"
@@ -98,6 +107,9 @@ android {
         implementation "com.squareup.moshi:moshi:$moshi"
         implementation "com.squareup.moshi:moshi-kotlin:$moshi"
 
+        implementation "androidx.room:room-runtime:$room"
+        implementation "androidx.room:room-rxjava2:$room"
+        annotationProcessor "androidx.room:room-compiler:$room"
 
         implementation "com.facebook.stetho:stetho-okhttp3:$stetho"
         implementation "com.jakewharton.timber:timber:$timber"
